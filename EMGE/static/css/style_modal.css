@@ -1,0 +1,26 @@
+    .input-group-prepend span{
+        border-radius: 10px;
+    border-top-right-radius: initial;
+    border-bottom-right-radius: initial;
+    }
+    .input-group input{
+            border-radius: 10px;
+    border-top-left-radius: initial;
+    border-bottom-left-radius: initial;
+    }
+    
+    .modal-content{
+        border-radius: 10px;
+    }
+    
+    .modal-header{
+        background-image: linear-gradient(to right, #fdd54f, #f8049c);
+            border-radius: 10px;
+    border-bottom-left-radius: initial;
+    border-bottom-right-radius: initial;
+    }
+    
+    #submit{
+        background-color: #fdd54f;
+        border-radius: 10px;
+    }

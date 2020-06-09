@@ -1,0 +1,93 @@
+body{
+        background-image: linear-gradient(to right, #ff5f6d , #ffc371);
+    }
+    .mycontainer{
+        margin-top: 1rem;
+        background-color: white;
+        border-radius: 1.5rem;
+        height: 2000px;
+        display: flex;
+        flex-direction: column;
+        /*width: 110%;*/
+    }
+    .background{
+        background-color: #f0f0f0;
+        height: 200px;
+        border-radius: 1.5rem;
+        /*margin-top: 100px;*/
+    }
+    .image{
+        height: 200px;
+        width: 100%;
+        margin-top: 100px;
+        justify-content: left;
+        padding-left: 4rem;
+        padding-top: 1.5rem;
+    }
+    .image img{
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        display: inline-block;
+        /*width: 200px;*/       
+        /*padding-left: 2rem;*/
+    }
+    .info{
+        width: 100%;
+        /*margin-left: 12rem;*/
+        margin-top: -1rem;
+    }
+    @media (max-width: 767px){
+    .details{
+        text-align: center;
+    }
+    .info{
+        margin-left: 0rem;
+    }
+    .social-media{
+        margin-bottom: 100px;
+    }
+}
+.Carousel{
+    justify-content: center;
+}
+.details{
+    /*padding-top: 1.5rem;*/
+}
+.icons{
+    justify-content: center;
+}
+    .basicinfo{
+        text-align: center;
+        background-color: #f0f0f0;
+        /*padding-left: 1rem;*/
+        margin-left: 0rem;
+        padding-top: 0rem; 
+        border-radius: 1.5rem;
+    }
+    @media (min-width: 768px){
+    .social-media{
+        width: 50%;
+        margin-top: 220px;
+        padding-left: 0rem;
+        padding-top: 1rem;
+        background-color: #f0f0f0;
+        border-radius: 25px;
+        margin-left: 2rem;
+       /*justify-content: center;*/
+    }
+}
+        @media (max-width: 767px){
+    .details{
+        text-align: center;
+    }
+    .info{
+        margin-left: 0rem;
+    }
+    .social-media{
+         background-color: #f0f0f0;
+        margin-top: 400px;
+        border-radius: 25px;
+        /*justify-content: center;*/
+    }
+}

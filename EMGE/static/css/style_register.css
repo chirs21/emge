@@ -1,0 +1,63 @@
+ * {
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body{
+background-color:#F8F9F9 ;
+}
+ 
+.container{
+	padding-bottom: -0.5rem;
+}
+.mycontainerfluid{
+  padding-top: 1rem;
+}
+.mainform{
+  border: 1px solid black;
+}
+.main-form{
+  padding-top: 10px;
+}
+.tab-content{
+	margin-bottom: 0px;
+}
+.content-section {
+  background-color:#F8F9F9  ;
+  padding: 5px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 25px;  
+}
+.nav-tabs{
+  justify-content: center;
+}
+.product-tabs .nav-tabs .formtabs a:link{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.product-tabs .nav-tabs .formtabs{
+  background-color: #D6DBDF ;
+}
+label, textarea, legend{
+	color: #000000;
+}
+
+.heading{
+  background-image: linear-gradient(to right, #000000, #000000);
+  padding: 1rem;
+  margin-top: 0;
+}
+.btn{
+  margin-top: 2rem;
+  margin-left: 10%;
+  padding: 1rem;
+  background-color:#808080 ;
+}
+.form-group input,.form-group textarea{
+   background-image: linear-gradient(to right, #FFFFFF , #FFFFFF);
+}
+.tab-control{
+  display: flex;
+  flex-direction: row;
+}

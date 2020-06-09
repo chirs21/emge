@@ -1,0 +1,52 @@
+/*----ADVERTISE & LIST YOUR BUSINESS STYLING ----*/
+    .getInTouch{
+     border-radius: 25px;
+        font-weight: bolder;
+        
+    }
+    h2{
+        color: #f8049c;
+        font: raleway;
+        font-weight: bold;
+    }
+/*-------FORM styling-------*/
+    .submit{
+        background-color: #fdd54f;
+        
+    }
+   
+    #form .form-control{
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: unset;
+    }
+  
+    #form{
+         background-color: white;
+         padding: 10px;
+         border-radius:15px;
+        
+    }
+/*------WELL STYLING-----*/
+   .well{
+        background-color: white;
+        padding: 20px;
+        text-align: left;
+        font-size: 18px;
+        border-radius:15px;
+    }
+/*--SUBheader---*/
+    .subheader{
+        margin: 0 auto; 
+        border: 1px solid white;
+        background-color: white;
+        border-radius:15px;
+        width: 82%;
+    }
+/*-----------BACKground gradient ----------*/
+    .background_gradient{
+        background-image: linear-gradient(to right, #fdd54f, #f8049c);
+        width: 100%;
+        padding-top:40px; 
+    }
+/*--------------close BG---------------*/
