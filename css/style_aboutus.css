@@ -1,0 +1,20 @@
+	.myrow{
+		text-align: center;
+	}
+	.logo{
+		display: inline-block;
+		align-items: center;
+	}
+	.paragraph{
+		background-color: #f0f0f0;
+		/*height: 300px;*/
+	}
+	.row_para{
+		padding-top: 1rem;
+		padding-bottom: 3rem;
+	}
+	.paragraph{
+		border-radius: 1.5rem;
+		padding: 1rem;
+		justify-content: center;
+	}

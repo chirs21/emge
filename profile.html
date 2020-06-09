@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+<script src="https://code.jquery.com/jquery-2.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link type="text/css" rel="stylesheet" href="css/style_navbar.css">
+<link type="text/css" rel="stylesheet" href="css/style_modal.css">
+<link type="text/css" rel="stylesheet" href="css/style_footer.css">
+<link type="text/css" rel="stylesheet" href="css/style_profile.css">
+<title>Your Profile</title>
+<style>
+a:hover{
+	color:#33b288!important;
+
+}
+.navbar-nav .dropdown-menu{
+  border-radius:1.25rem;
+}
+</style>
+    </head>
+<body>
+  <navbar class="navbar navbar-expand-lg navbar-light bg-light">
+  		<div class="container">
+  		<a href="home.html" class="navbar-brand"><img src="images/logo1.png"></a>
+  		<button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#ids">
+  			<span class="navbar-toggler-icon my-toggler"></span>
+  		</button>
+  		<div class=" collapse navbar-collapse" id="ids">
+  		<ul class="navbar-nav ml-auto ul">
+  		<li class="nav-item">
+  			<a href="home.html" class="nav-link">Home</a>
+  		</li>
+  		<li class="nav-item dropdown">
+  			<a href="home.html" type="button" class="nav-link dropbtn">Categories</a>
+              <div class="dropdown-content">
+        <div class="row1 row">
+          <div class="col-sm-4">
+            <h3>Category 1</h3>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+          <div class="col-sm-4">
+            <h3>Category 2</h3>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+          <div class="col-sm-4">
+            <h3>Category 3</h3>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+              </div>
+  		</li>
+  		<li class="nav-item">
+  			<a href="partner.html" class="nav-link">Partner</a>
+  		</li>
+      <li class="nav-item">
+  			<a href="post.html" class="nav-link">Post</a>
+  		</li>
+      <li class="nav-item">
+        <a href="profile.html" class="nav-link"><img src="images/profilepic.png" style="width:40px;height:40px;"></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <svg class="bi bi-chevron-down" width="1em" height="1em" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+</svg>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Name</a>
+          <a class="dropdown-item" href="#">Email Address</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Dashboard</a>
+          <a class="dropdown-item" href="#">Help Center</a>
+          <a class="dropdown-item" href="#">Dashboard</a>
+          <a class="dropdown-item" href="#">Manage Account
+<ul >
+  <li style="list-style-type:none; ">
+<a href="#" style="color:black!important;">View profile</a>
+  </li>
+  <li style="list-style-type:none;">
+    <a href="#" style="color:black!important;">Change Password</a>
+  </li>
+  <li style="list-style-type:none;">
+    <a href="#" style="color:black!important;">Logout</a>
+  </li>
+</ul>
+          </a>
+        </div>
+      </li>
+
+  		</ul>
+  		</div>
+  		</div>
+  	</navbar>
+<div class="container" >
+  <div class="row">
+    <div class="col-4">
+      <img src="images/profilepic.png" alt="Profile pic/Logo" class="mx-auto d-block col-5" style="padding-top:100px;"/>
+          </div>
+        <div class="col-8 form_area">
+          <h1 class="text-center">Your Profile</h1>
+          <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name">
+          </div>
+        </div>
+        <div class="form-group ">
+          <label for="inputAddress">Organisation</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="Organisation">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputContact">Contact</label>
+            <input type="text" class="form-control" id="inputContact" placeholder="Contact">
+          </div>
+        </div>
+      </form>
+      <div class="col-4">
+        <h4>
+          Document
+        </h4>
+        <img src="images/thumbnail.png" alt="Document" class="col-5"/>
+      </div>
+      <div class="col">
+        <p class="text-center"><a href="#" style="color:black !important;">Edit Profile</a></p>
+      </div>
+              </div>
+
+        </div>
+  </div>
+</div>
+    <div class="footer">
+      <div class="row">
+        <div class="col-sm-2">
+            <div style="background-color:white">Logo</div>
+            <br>
+            <p><a href="aboutus.html">About Us</a></p>
+            <p><a href="#">Partners</a></p>
+            <p><a href="#">Clientele</a></p>
+            <p><a href="#">Testimonials</a></p>
+        </div>
+        <div class="col-sm-2">
+            <p class="header">Browse Opportunities</p>
+            <br>
+            <p><a href="#">Competitions </a>|
+               <a href="#"> Quizzes</a></p>
+            <p><a href="#">Hackathons </a>|
+               <a href="#"> Jobs and Internships</a></p>
+            <p><a href="#">Scholarships </a>|
+               <a href="#"> Workshops</a></p>
+            <p><a href="#">Cultural Events</a>
+        </div>
+        <div class="col-sm-2">
+            <p class="header">Categories<p>
+            <p><a href="#">Industries </a></p>
+            <p><a href="#">Industries-1</a></p>
+            <p><a href="#">Industries-2</a></p>
+            <p><a href="#">Industries-3</a></p>
+            <p><a href="#">Industries-4</a></p>
+            <p><a href="#">Industries-5</a></p>
+            <p><a href="#">Industries-6</a></p>
+        </div>
+        <div class="col-sm-2">
+            <p class="header">Locations</p>
+            <p><a href="#">Delhi </a></p>
+            <p><a href="#">Mumbai</a></p>
+            <p><a href="#">Kolkata</a></p>
+            <p><a href="#">Pune</a></p>
+            <p><a href="#">Bengaluru</a></p>
+            <p><a href="#">Chennai</a></p>
+            <p><a href="#">Ahemdabad</a></p>
+        </div>
+        <div class="col-sm-4">
+            <p class="header">Connect with us</p>
+            <p><a href="#"><i class='fab fa-instagram' style='font-size:24px;color:white'></i>&nbspInstagram </a></p>
+            <p><a href="#"><i class='fab fa-facebook' style='font-size:24px;color:white'></i>&nbspFacebook </a></p>
+            <p><a href="#"><i class='fab fa-whatsapp' style='font-size:24px;color:white'></i>&nbspWhatsapp </a></p>
+            <p><a href="#"><i class='fab fa-linkedin' style='font-size:24px;color:white'></i>&nbspLinkedIn</a></p>
+        </div>
+      </div>
+<hr style="border-top: 1px solid white;">
+       <div class="conditions">
+           <p><a href="terms.html">Terms & Conditions </a>|
+              <a href="#"> Privacy Policy </a>|
+              <a href="#"> Branding Guidelines </a>|
+              <a href="#"> Partner With Us </a>|
+              <a href="#"> Contact Us </a>|
+              <a href="#"> FAQs </a>|
+              <a href="#"> Subscribe Newsletter</a>
+              <a type="button" href="#" class="btn btn-primary" style="color:white">Publish Oppotunity</a>
+           </p>
+        </div> 
+<hr style="border-top: 1px solid white;"><br><br>
+</div> 
+    </body>
+</html>

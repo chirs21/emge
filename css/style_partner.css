@@ -1,0 +1,113 @@
+* {
+  font-family: "Raleway", sans-serif;
+}
+.new1{
+    border-top:2px solid #33b288;
+    width: 70px;
+    float: left;
+}
+/*Find-Us-There*/
+.well div .grn {
+    color: #33b288;
+}
+.find_us div h4{
+    font-weight:normal;
+    text-align:left;
+}
+/*--Contact-Form--*/
+   
+.submit{
+        background-color: #33b288;
+        border-radius: 25px;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        font-weight: normal;
+        float: right;
+        color: white;
+    }
+   
+   .forms .form-control{
+       border-radius: unset;
+/*       border: 1px solid black;*/
+       box-shadow: 2px 1px 2px 1px rgba(0,0,0,0.2);
+    }
+  
+   .forms{
+         background-color: white;
+         padding: 10px;
+         border-radius:15px;
+         font-weight:normal;
+         text-align:left;
+         font-size: 18px;
+         margin-top:24px;
+         margin-bottom:35px;
+         font-family: 'Raleway', sans-serif;
+         height: auto;
+/*         border: 1px solid black;*/
+}
+/*//-----------*/
+.qoutz{
+    /*font-family: 'Vidaloka', serif;*/
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 48px;
+}
+
+/*------WELL STYLING-----*/
+   .find_us{
+        background-color: white;
+        padding: 20px;
+        text-align: left;
+        font-size: 18px;
+        border-radius:15px;
+        font-family: 'Raleway', sans-serif;
+        margin-top:15px;
+        margin-bottom: 35px; 
+/*       border: 1px solid black;*/
+    }
+.find_us div p{
+    color: #75797d;
+    font-size: 15px;
+    line-height: 25px;
+}
+/*----ADVERTISE & LIST YOUR BUSINESS STYLING ----*/
+    .getInTouch{
+     border-radius: 25px;
+        font-weight: bolder;
+        
+    }
+   .box_head{
+        color: #33b288;
+        font-family: 'Vidaloka', serif;
+        
+    }
+ .know{
+        background-color: #33b288;
+        border-radius: 25px; 
+    }
+    .know:hover{
+      color: white;
+    }
+
+/*--SUBheader---*/
+    .subheader{
+        margin: 0 auto; 
+        background-color: white;
+        width: 82%;
+    }
+/*--SUBhead---*/
+    .subhead{
+        margin: 0 auto; 
+        border: 1px solid white;
+        background-color: white;
+        border-radius: 5px;
+        width: 82%;
+        height:400px;
+        box-shadow: 8px 4px 8px 4px rgba(0,0,0,0.2);
+    }
+/*-----------BACKground gradient ----------*/
+    .background_gradient{
+        background-color: white;
+        width: 100%;
+        padding-top:40px; 
+    }
+/*--------------close BG---------------*/
