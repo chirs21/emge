@@ -8,7 +8,10 @@ from accounts.forms import UserLoginForm #, UserRegistrationForm
 
 def index(request):
     #Return the index html file
-    return render(request, 'home.html')
+    return render(request, 'home/home.html')
+
+def fp(request):
+    return render(request,'accounts/fp.html')
 
 @login_required
 def logout(request):
@@ -19,9 +22,6 @@ def logout(request):
 
 def cp(request):
     return render(request,'accounts/cp.html')
-
-def fp(request):
-    return render(request,'accounts/fp.html')
 
 def login(request):
     # Return a login page
@@ -52,7 +52,7 @@ def register(request):
     return render(request,'accounts/register.html')
     """
     if request.user.is_authenticated:
-        return redirect(reverse('home_form'))
+        return redirect(reverse('home'))
     
     if request.method == "POST":
         registration_form = UserRegistrationForm(request.POST)
@@ -66,7 +66,7 @@ def register(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully registered")
-                return redirect(reverse('home_form'))
+                return redirect(reverse('home'))
             else:
                 messages.error(request, "Unable to register your account at this time")
             
