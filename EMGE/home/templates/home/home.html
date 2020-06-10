@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,14 +32,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <link type="text/css" rel="stylesheet" href="css/style_navbar.css" />
-    <link type="text/css" rel="stylesheet" href="css/style_modal.css" />
-    <link type="text/css" rel="stylesheet" href="css/style_home.css" />
-    <link type="text/css" rel="stylesheet" href="css/style_footer.css" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style_navbar.css'%}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style_modal.css'%}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style_home.css'%}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style_footer.css'%}" />
     <link
       type="text/css"
       data-typed-js-css="true"
-      href="css/style_home_2.css"
+      href="{% static 'css/style_home_2.css'%}"
     />
   </head>
   <style type="text/css">
@@ -72,7 +73,7 @@
   <body>
     <navbar class="navbar navbar-expand-sm navbar-light bg-col">
       <div class="container contains">
-        <a href="home.html" class="navbar-brand"><img src="images/logo2.png"/></a>
+        <a href="{% url 'home' %}" class="navbar-brand"><img src="{% static 'images/logo2.png' %}"/></a>
         <button
           class="navbar-toggler ml-auto"
           data-toggle="collapse"
@@ -83,26 +84,32 @@
         <div class="collapse navbar-collapse" id="ids">
           <ul class="navbar-nav ml-auto ul">
             <li class="nav-item">
-              <a href="home.html" class="nav-link">Home</a>
+              <a href="{% url 'home'%}" class="nav-link">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a href="#" type="button" class="nav-link dropbtn">Categories</a>
               <div class="dropdown-content">
                 <div class="row1 row">
                   <div class="col-sm-4">
-                    <h3>Category 1</h3>
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <h3>Apparels</h3>
+                    <a href="{% url 'menapparel' %}">Men</a>
+                    <a href="#">Women</a>
+                    <a href="#">Kids</a>
                   </div>
                   <div class="col-sm-4">
-                    <h3>Category 2</h3>
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <h3>Electronics</h3>
+                    <a href="#">Mobile</a>
+                    <a href="#">Laptop</a>
+                    <a href="#">Accessories</a>
                   </div>
                   <div class="col-sm-4">
-                    <h3>Category 3</h3>
+                    <h3>Home</h3>
+                    <a href="#">Kitchen</a>
+                    <a href="#">Pets</a>
+                    <a href="#">Household</a>
+                  </div>
+                  <div class="col-sm-4">
+                    <h3>Automobiles</h3>
                     <a href="#">Link 1</a>
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
@@ -111,7 +118,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a href="partner.html" class="nav-link">Partner</a>
+              <a href="{% url 'partner'%}" class="nav-link">Partner</a>
             </li>
             <li class="nav-item signin">
               <button
@@ -123,10 +130,29 @@
                   ><i class="fa fa-sign-in">&nbsp;&nbsp;</i></span
                 >Sign In&nbsp;&nbsp;</button>
             </li>
+            <li>
+              <a href="/logout" class="btn btn--radius-2 " type="submit" style="display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;    color: #fff;
+    background-color: #525252;
+    border-color: #525252;">Log Out</a>
+            </li>
           </ul>
         </div>
-    </div>
-</navbar>
+      </div>
+    </navbar>
     <div class="container">
       <!-- The Modal -->
       <div class="modal" id="myModal">
@@ -209,6 +235,15 @@
             <div class="logo">
               <h1>Store <span class="typed-words"></span></h1>
             </div>
+            <div class="buttons">
+              <button type="button" class="btn btn-default button2 check" ><span><i class="fas fa-check"></i></span>All</button>
+              <button class="btn btn-default dropdown-toggle button2" type="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-map-marker-alt">&nbsp;</i></span>
+              Location
+              </button>
+                  <button class="btn btn-default dropdown-toggle button2" type="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><i class="fas fa-industry">&nbsp;</i></span>
+              Industry
+              </button>
+            </div>
             <form>
               <div class="input-group">
                 <input
@@ -229,7 +264,7 @@
         <div class="col-sm-2">
           <div style="background-color: white;">Logo</div>
           <br />
-          <p><a href="aboutus.html">About Us</a></p>
+          <p><a href="{% url 'about' %}">About Us</a></p>
           <p><a href="#">Partners</a></p>
           <p><a href="#">Clientele</a></p>
           <p><a href="#">Testimonials</a></p>
@@ -309,7 +344,7 @@
       <hr style="border-top: 1px solid white;" />
       <div class="conditions">
         <p>
-          <a href="terms.html">Terms & Conditions </a>|
+          <a href="{% url 'terms' %}">Terms & Conditions </a>|
           <a href="#"> Privacy Policy </a>|
           <a href="#"> Branding Guidelines </a>|
           <a href="#"> Partner With Us </a>| <a href="#"> Contact Us </a>|
@@ -344,6 +379,6 @@
         }
       };
     </script>
-    <script src="includes/js_home.js"></script>
+    <script src="{% static 'js/js_home.js' %}"></script>
   </body>
 </html>
