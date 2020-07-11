@@ -1,0 +1,367 @@
+{% load static %}
+<html>
+<head>
+   <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+   <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style_navbar.css'%}" />
+    <!-- <link type="text/css" rel="stylesheet" href="css/style_home.css" /> -->
+    <!-- <link type="text/css" data-typed-js-css="true" href="css/style_home.css" /> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_register.css'%}">
+</head>
+  <body>
+
+   
+    <navbar class="navbar sticky-top navbar-expand-sm navbar-light bg-col">
+      <div class="container contains">
+        <a href="{% url 'home' %}" class="navbar-brand"
+          ><img src="{% static 'images/logo2.png' %}"
+        /></a>
+        <button
+          class="navbar-toggler ml-auto"
+          data-toggle="collapse"
+          data-target="#ids"
+        >
+          <span class="navbar-toggler-icon my-toggler"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="ids">
+          <ul class="navbar-nav ml-auto ul">
+            <li class="nav-item">
+              <a href="{% url 'home' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button style="color: black; font-weight: 600; cursor: pointer; font-size: 1.1rem; border: unset; background-color: unset; outline: none;" class="nav-link dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories
+                </button>
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <!-- <li class="dropdown-divider"></li> -->
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item" tabindex="-1" href="#" style="color: black; font-weight: 600">Category 1</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a tabindex="-1" href="#">Category 1.1</a></li>
+                    <li class="dropdown-item"><a href="#">Category 1.2</a></li>
+                    <li class="dropdown-item"><a href="#">Category 1.3</a></li>
+                  </ul>
+                </li>
+                 <li class="dropdown-submenu">
+                  <a  class="dropdown-item" tabindex="-1" href="#" style="color: black; font-weight: 600">Category 2</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a tabindex="-1" href="#">Category 2.1</a></li>
+                    <li class="dropdown-item"><a href="#">Category 2.2</a></li>
+                    <li class="dropdown-item"><a href="#">Category 2.3</a></li>
+                  </ul>
+                </li>
+                </ul>
+               </div>
+            </li>
+                      <li class="nav-item">
+                        <a href="{% url 'partner' %}" class="nav-link">Partner</a>
+                      </li>
+                      <li class="nav-item signin">
+                        <a 
+                          type="button"
+                          data-toggle="modal"
+                          data-target="#myModal"
+                          class="nav-link sign-in"
+                          >&nbsp;&nbsp;<span
+                            ><i class="fa fa-sign-in">&nbsp;&nbsp;</i></span
+                          >Sign In&nbsp;&nbsp;</a
+                        >
+                      </li>
+                    </ul>
+        </div>
+      </div>
+    </navbar>
+  <br>
+  <br>
+  <center><h1 style="background-color: #d9d9d9; height: 80px; text-shadow: 2px 2px grey;  font-size: 60px; cursor: pointer;box-shadow: 3px 2px 3px 2px #d9d9d9;">Sign Up</h1> </center><br>
+<br>
+    <div class="container container_registration">
+      <form method="Post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-sm-12 product-tabs">
+                    <button class="tablinks active" id="pers" data-toggle="tab" onclick="openCity(event, 'personal')" style="outline: none">Personal Details</button>
+                    <button class="tablinks" id="org" data-toggle="tab" onclick="openCity(event, 'organisation')" style="outline: none;">Organisation's Details</button>
+            </div>
+        </div>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50" id='personal'>
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading" style="background-color: #33b288">
+                    <h2 class="title" style="text-shadow: 2px 2px black" >Registration Form</h2>
+                </div>
+                <div class="card-body">
+                    
+                        <div class="form-row">
+                            <div class="name">Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                  {{form1.name}}  
+                                  <!--<input class="input--style-5" type="text" name="company">-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Official Email Address</div>
+                            <div class="value">
+                                <div class="input-group">
+                                  {{form1.email}}
+                                    <!--<input class="input--style-5" type="email" name="email">-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Organization Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                  {{form1.organisation}}
+                                   <!-- <input class="input--style-5" type="text" name="name">-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Phone number</div>
+                            <div class="value">
+                                <div class="input-group">
+                                  {{form1.contact}}
+                                   <!-- <input class="input--style-5" type="number" name="number">-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Password</div>
+                            <div class="value">
+                                <div class="input-group">
+                                  {{form1.password}}
+                                    <!--<input class="input--style-5" type="password" name="password">-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                        <div class="input-group">
+                          <div class="custom-file">
+                            {{form1.selfie}}
+                            <!--<input type="file" class="custom-file-input" id="inputGroupFile">-->
+                            <label class="custom-file-label" for="inputGroupFile04"><b>Upload Your Image</b></label>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="buttons">
+                        <button onclick="next(event, 'organisation','org')" class="btn btn-primary btn_next"  type="submit">Next</button>
+                    </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50" id='organisation' style="display: none">
+        <div class="wrapper wrapper--w790">
+
+            <div class="card card-5">
+                <div class="card-heading" style="background-color: #33b288;">
+                    <h2 class="title" style="text-shadow: 2px 2px black" >Registration Form</h2>
+                </div>
+<div class="card-body">
+	<div class="row">
+        <div class="col-md-4"></div>
+                <div class="card-body">
+
+                        <div class="form-row">
+                            <div class="name">CIN No.</div>
+                            <div class="value">
+                                <div class="input-group">
+                                  {{form1.CIN}}
+                                    <!--<input class="input--style-5" type="text" name="number">-->
+                                </div>
+                            </div>
+                        </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Description</label>
+              {{form1.Intro}}
+              <!--<textarea class="form-control" id="exampleFormControlTextarea1" rows="4 "></textarea><br>-->
+            </div>
+          <div class="form-row">
+            <div class="custom-file">
+              {{form1.document}}
+              <!--<input type="file" class="custom-file-input" id="inputGroupFile">-->
+              <label class="custom-file-label" for="inputGroupFile04"><b>Upload Documents</b></label>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div class="custom-file">
+              {{form1.logo}}
+              <!--<input type="file" class="custom-file-input" id="inputGroupFile">-->
+              <label class="custom-file-label" for="inputGroupFile04"><b>Upload LOGO</b></label>
+            </div>
+          </div>
+
+ <br>
+ <div class="buttons">
+    <button onclick="next(event, 'personal','pers')" class="btn btn-primary btn_next" value="button" style="">Previous</button>
+		<button class="btn btn-primary btn_next" value="button" style="">Submit</button> 
+  </div>
+                        </div>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+</div>
+<link type="text/css" rel="stylesheet" href="{%static 'css/style_footer.css'%}" />
+
+         <div class="footer">
+      <div class="row">
+        <div class="col-sm-2">
+            <div style="background-color:white">Logo</div>
+            <br>
+            <p><a href="{% url 'about'%}">About Us</a></p><br>
+            <p><a href="#">Partners</a></p><br>
+            <p><a href="#">Clientele</a></p><br>
+            <p><a href="#">Testimonials</a></p><br>
+        </div>
+        <div class="col-sm-2">
+            <p class="header">Browse Opportunities</p>
+            <br>
+            <p><a href="#">Competitions </a>|
+               <a href="#"> Quizzes</a></p><br>
+            <p><a href="#">Hackathons </a>|
+               <a href="#"> Jobs and Internships</a></p><br>
+            <p><a href="#">Scholarships </a>|
+               <a href="#"> Workshops</a></p><br>
+            <p><a href="#">Cultural Events</a><br>
+        </div>
+        <div class="col-sm-2">
+            <p class="header">Categories<p><br>
+            <p><a href="#">Industries </a></p><br>
+            <p><a href="#">Industries-1</a></p><br>
+            <p><a href="#">Industries-2</a></p><br>
+            <p><a href="#">Industries-3</a></p><br>
+            <p><a href="#">Industries-4</a></p><br>
+            <p><a href="#">Industries-5</a></p><br>
+            <p><a href="#">Industries-6</a></p><br>
+        </div>
+        <div class="col-sm-2">
+            <p class="header">Locations</p><br>
+            <p><a href="#">Delhi </a></p><br>
+            <p><a href="#">Mumbai</a></p><br>
+            <p><a href="#">Kolkata</a></p><br>
+            <p><a href="#">Pune</a></p><br>
+            <p><a href="#">Bengaluru</a></p><br>
+            <p><a href="#">Chennai</a></p><br>
+            <p><a href="#">Ahemdabad</a></p>
+        </div>
+        <div class="col-sm-4">
+            <p class="header">Connect with us</p><br>
+            <p><a href="#"><i style='font-size:24px;color:white'></i>&nbspInstagram </a></p><br>
+            <p><a href="#"><i style='font-size:24px;color:white'></i>&nbspFacebook </a></p><br>
+            <p><a href="#"><i style='font-size:24px;color:white'></i>&nbspWhatsapp </a></p><br>
+            <p><a href="#"><i style='font-size:24px;color:white'></i>&nbspLinkedIn</a></p><br>
+        </div>
+      </div>
+<hr style="border-top: 1px solid white;"><br>
+       <div class="conditions">
+           <p><a href="terms.php">Terms & Conditions </a>|
+              <a href="#"> Privacy Policy </a>|
+              <a href="#"> Branding Guidelines </a>|
+              <a href="#"> Partner With Us </a>|
+              <a href="#"> Contact Us </a>|
+              <a href="#"> FAQs </a>|
+              <a href="#"> Subscribe Newsletter</a>
+              <a type="button" href="#" class="btn btn-primary" style="color:white">Publish Opportunity</a><br><br>
+           </p>
+        </div> 
+<hr style="border-top: 1px solid white;"><br><br>
+</div> 
+  <script type="text/javascript">
+   function highlightCurrent() {
+         const curPage = document.URL;
+         const links = document.getElementsByClassName("nav-link");
+         for (let link of links) {
+           if (link.href == curPage) {
+             link.classList.add("current");
+           }
+         }
+       }
+       document.onreadystatechange = () => {
+         if (document.readyState === 'complete') {
+           highlightCurrent()
+         }
+       };
+  function openCity(evt, cityName) {
+     $(window).scrollTop(0);
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("page-wrapper");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    // tablinks[i].style.backgroundColor="white";
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+    function next(evt, cityName, id) {
+      $(window).scrollTop(0);
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("page-wrapper");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  document.getElementById(id).className += " active";
+  }
+
+
+    </script></div>
+        <script src="{% static 'js/js_navbar.js'%}"></script>
+        <script src="{% static 'js/js_partner.js'%}"></script>
+
+</html>
+

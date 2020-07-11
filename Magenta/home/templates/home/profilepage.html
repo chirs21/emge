@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profile Page</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+   
+<!-- Custom Theme files -->
+<!--google fonts-->
+<!-- <link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'> -->
+    <!-- <link href="css/forgotpassword.css" rel="stylesheet" type="text/css" media="all"/> -->
+    <link type="text/css" rel="stylesheet" href="css/style_navbar.css" />
+    <link type="text/css" rel="stylesheet" href="css/style_home.css" />
+    <link type="text/css" rel="stylesheet" href="css/style_footer.css" />
+  </head>
+  <style type="text/css">
+  	@media (max-width: 767px){
+  		.input-group{
+  			width: 80%;
+  			margin-left: 10%;
+  			margin-top: 1rem;
+  		}
+  	}
+  	@media (min-width: 768px){
+  		.input-group{
+  			width: 30%;
+  			margin-left: 35%;
+  		}
+  	}
+  </style>
+
+  <body>
+
+   <navbar class="navbar sticky-top navbar-expand-sm navbar-light bg-col">
+      <div class="container contains">
+        <a href="home.html" class="navbar-brand"
+          ><img src="images/logo2.png"
+        /></a>
+        <button
+          class="navbar-toggler ml-auto"
+          data-toggle="collapse"
+          data-target="#ids"
+        >
+          <span class="navbar-toggler-icon my-toggler"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="ids">
+          <ul class="navbar-nav ml-auto ul">
+            <li class="nav-item">
+              <a href="home.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button style="color: black; font-weight: 600; cursor: pointer; font-size: 1.1rem; border: unset; background-color: unset; outline: none;" class=" nav-link dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories
+                </button>
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <!-- <li class="dropdown-divider"></li> -->
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item" tabindex="-1" href="#" style="color: black; font-weight: 600">Category 1</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a tabindex="-1" href="#">Category 1.1</a></li>
+                    <li class="dropdown-item"><a href="#">Category 1.2</a></li>
+                    <li class="dropdown-item"><a href="#">Category 1.3</a></li>
+                  </ul>
+                </li>
+                 <li class="dropdown-submenu">
+                  <a  class="dropdown-item" tabindex="-1" href="#" style="color: black; font-weight: 600">Category 2</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a tabindex="-1" href="#">Category 2.1</a></li>
+                    <li class="dropdown-item"><a href="#">Category 2.2</a></li>
+                    <li class="dropdown-item"><a href="#">Category 2.3</a></li>
+                  </ul>
+                </li>
+                </ul>
+               </div>
+            </li>
+                      <li class="nav-item">
+                        <a href="partner.html" class="nav-link">Partner</a>
+                      </li>
+                      <li class="nav-item signin">
+                        <a
+                          type="button"
+                          data-toggle="modal"
+                          data-target="#myModal"
+                          class="nav-link sign-in"
+                          >&nbsp;&nbsp;<span
+                            ><i class="fa fa-sign-in">&nbsp;&nbsp;</i></span
+                          >Sign In&nbsp;&nbsp;</a
+                        >
+                      </li>
+                    </ul>
+        </div>
+      </div>
+    </navbar>
+<!--element start here-->
+<div class="element" style="text-align: center;padding-top: 4rem;">
+	<div class="element-main" style="text-align: center; padding: 1rem">
+
+
+
+<div class="container mt-4 mb-4" style="text-align: center; background-color: #d9d9d9; padding: 1rem">
+	<h1 class="text-center">Organization Name</h1><br><br>
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
+              
+
+      <div class="text-center">
+        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+        <h6>Upload a different photo...</h6>
+        <input type="file" class="text-center center-block file-upload">
+      </div><br>
+
+                <div class="list-group">
+            <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+            <div class="panel-body"><a href="http://bootnipets.com">YourWebsite.com</a></div>
+          </div>
+          
+          
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Latest Product<i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Product1</strong></span> 125</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Product2</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Product3</strong></span> 37</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Product4</strong></span> 78</li>
+          </ul> 
+               
+
+
+               
+          
+          
+             
+          
+        </div><!--/col-3--> 
+    	<div class="col-sm-9">
+              
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                
+                  <form class="form" action="##" method="post" id="registrationForm">
+                      <div class="form-group">
+                          
+                          
+                              <label for="first_name"><h4>First name</h4></label>
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name">
+                        
+                      </div>
+                      <div class="form-group">
+                          
+                        
+                            <label for="last_name"><h4>Last name</h4></label>
+                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                          
+                      </div>
+          
+                      <div class="form-group">
+                          
+                             <label for="mobile" style="margin-left: 1%;"><h4>Mobile</h4></label>
+                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
+                          
+                      </div>
+                      <div class="form-group">
+                              <label for="email" style="margin-left: 1%;"><h4>Email</h4></label>
+                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
+                         
+                      </div>
+
+                      <div class="form-group">
+                              <label for="email" style="margin-left: 1%;"><h4>Description</h4></label>
+			      <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea><br>
+                      </div>
+
+
+                      <div class="form-group">
+                           <div class="col-xs-12">
+                                <br>
+                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button><br><br>
+                            </div>
+                      </div>
+              	</form>
+              
+              
+               
+              </div><!--/tab-pane-->
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+
+
+
+
+	</div>
+</div>
+<br><br>
+
+
+
+<div class="footer">
+      <div class="row">
+        <div class="col-sm-2">
+          <div style="background-color: white;">Logo</div>
+          <br />
+          <p><a href="aboutus.html">About Us</a></p>
+          <p><a href="#">Partners</a></p>
+          <p><a href="#">Clientele</a></p>
+          <p><a href="#">Testimonials</a></p>
+        </div>
+        <div class="col-sm-2">
+          <p class="header">Browse Opportunities</p>
+          <br />
+          <p><a href="#">Competitions </a>| <a href="#"> Quizzes</a></p>
+          <p>
+            <a href="#">Hackathons </a>| <a href="#"> Jobs and Internships</a>
+          </p>
+          <p><a href="#">Scholarships </a>| <a href="#"> Workshops</a></p>
+          <p><a href="#">Cultural Events</a></p>
+        </div>
+
+        <div class="col-sm-2">
+          <p class="header">Categories</p>
+          <p></p>
+          <p><a href="#">Industries </a></p>
+          <p><a href="#">Industries-1</a></p>
+          <p><a href="#">Industries-2</a></p>
+          <p><a href="#">Industries-3</a></p>
+          <p><a href="#">Industries-4</a></p>
+          <p><a href="#">Industries-5</a></p>
+          <p><a href="#">Industries-6</a></p>
+        </div>
+        <div class="col-sm-2">
+          <p class="header">Locations</p>
+          <p><a href="#">Delhi </a></p>
+          <p><a href="#">Mumbai</a></p>
+          <p><a href="#">Kolkata</a></p>
+          <p><a href="#">Pune</a></p>
+          <p><a href="#">Bengaluru</a></p>
+          <p><a href="#">Chennai</a></p>
+          <p><a href="#">Ahemdabad</a></p>
+        </div>
+        <div class="col-sm-4">
+          <p class="header">Connect with us</p>
+          <p>
+            <a href="#"
+              ><i
+                class="fab fa-instagram"
+                style="font-size: 24px; color: white;"
+              ></i
+              >&nbspInstagram
+            </a>
+          </p>
+          <p>
+            <a href="#"
+              ><i
+                class="fab fa-facebook"
+                style="font-size: 24px; color: white;"
+              ></i
+              >&nbspFacebook
+            </a>
+          </p>
+          <p>
+            <a href="#"
+              ><i
+                class="fab fa-whatsapp"
+                style="font-size: 24px; color: white;"
+              ></i
+              >&nbspWhatsapp
+            </a>
+          </p>
+          <p>
+            <a href="#"
+              ><i
+                class="fab fa-linkedin"
+                style="font-size: 24px; color: white;"
+              ></i
+              >&nbspLinkedIn</a
+            >
+          </p>
+        </div>
+      </div>
+      <hr style="border-top: 1px solid white;" />
+      <div class="conditions">
+        <p>
+          <a href="terms.html">Terms & Conditions </a>|
+          <a href="#"> Privacy Policy </a>|
+          <a href="#"> Branding Guidelines </a>|
+          <a href="#"> Partner With Us </a>| <a href="#"> Contact Us </a>|
+          <a href="#"> FAQs </a>|
+          <a href="#"> Subscribe Newsletter</a>
+          <a
+            type="button"
+            href="#"
+            class="btn btn-primary"
+            style="color: white;"
+            >Publish Oppotunity</a
+          >
+        </p>
+      </div>
+      <hr style="border-top: 1px solid white;" />
+      <br /><br />
+    </div>
+
+    <script type="text/javascript">
+      function highlightCurrent() {
+        const curPage = document.URL;
+        const links = document.getElementsByClassName("nav-link");
+        for (let link of links) {
+          if (link.href == curPage) {
+            link.classList.add("current");
+          }
+        }
+      }
+      document.onreadystatechange = () => {
+        if (document.readyState === "complete") {
+          highlightCurrent();
+        }
+      };
+    </script>
+    <script src="includes/js_navbar.js"></script>
+<!--element end here-->
+</body>
+</html>

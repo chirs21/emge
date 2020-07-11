@@ -1,0 +1,688 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Post</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+   <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+       <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style_navbar.css'%}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style_home.css'%}" />
+   <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css'%}">
+    <!--<link rel="stylesheet" type="text/css" href="style_contactform.css">-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<style type="text/css">
+  *{
+  box-sizing: border-box;
+  font-family:  "Raleway", sans-serif;
+}
+body{
+  background-color: #f0f0f0;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header button {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  margin-left: 1rem;
+  width: 180px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+.header-right {
+  float: right;
+}
+.header-right button{
+  background-color: #d9d9d9;
+  border-color: black;
+  color: black;
+}
+.header-right button:hover{
+  background-color: #33b288;
+  border: 1px solid white;
+  color: white;
+}
+.card-heading{
+  background-color: #33b288;
+}
+.buttons{
+ text-align: center;
+  margin-left: 1rem;
+ /*background-color: #33b288;*/
+  /*border: 1px solid black;*/
+  color: black;
+}
+.btn--red{
+  background-color: #33b288;
+  color: black;
+}
+.btn--red:hover{
+  color: white;
+  background-color: #33b288;
+  border: 1px solid white;
+}
+.header-right button.active{
+  background-color: #33b288;
+}
+/*@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}*/
+@media (max-width: 767px)
+{
+  .header button{
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
+ .buttons{
+  padding: 1rem;
+  text-align: center;
+ }
+ .btn--red{
+  margin-bottom: 1rem;
+  /*height: 40px;*/
+ }
+}
+</style>
+<script>
+  $(document).ready(function() {
+    $('.chkvalues').click(function()
+    {
+      var txt =""
+      $('.chkvalues:checked').each(function()
+      {
+        txt+=$(this).val()+",";
+      })
+      txt=txt.substring(0,txt.length-1);
+      $('#txtdisplay').val(txt);
+    });
+  });
+</script>
+<body>
+  
+  <navbar class="navbar sticky-top navbar-expand-sm navbar-light bg-col">
+      <div class="container contains">
+        <a href="{% url 'home' %}" class="navbar-brand"
+          ><img src="{% static 'images/logo2.png' %}"
+        /></a>
+        <button
+          class="navbar-toggler ml-auto"
+          data-toggle="collapse"
+          data-target="#ids"
+        >
+          <span class="navbar-toggler-icon my-toggler"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="ids">
+          <ul class="navbar-nav ml-auto ul">
+            <li class="nav-item">
+              <a href="{% url 'home' %}" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button style="color: black; font-weight: 600; cursor: pointer; font-size: 1.1rem; border: unset; background-color: unset; outline: none;" class="nav-link dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories
+                </button>
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <!-- <li class="dropdown-divider"></li> -->
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item" tabindex="-1" href="#" style="color: black; font-weight: 600">Category 1</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a tabindex="-1" href="#">Category 1.1</a></li>
+                    <li class="dropdown-item"><a href="#">Category 1.2</a></li>
+                    <li class="dropdown-item"><a href="#">Category 1.3</a></li>
+                  </ul>
+                </li>
+                 <li class="dropdown-submenu">
+                  <a  class="dropdown-item" tabindex="-1" href="#" style="color: black; font-weight: 600">Category 2</a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a tabindex="-1" href="#">Category 2.1</a></li>
+                    <li class="dropdown-item"><a href="#">Category 2.2</a></li>
+                    <li class="dropdown-item"><a href="#">Category 2.3</a></li>
+                  </ul>
+                </li>
+                </ul>
+               </div>
+            </li>
+                      <li class="nav-item">
+                        <a href="{% url 'partner' %}" class="nav-link">Partner</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="{% url 'post' %}" class="nav-link">Post</a>
+                      </li>
+                      <li class="nav-item">
+                        <div class="dropdown">
+                          <button class = "active" data-toggle="dropdown" style="border-color: white; background-color: white; border-width: 0px;">
+                        <img src="media/{{companies.logo}}" width="50px" height="40px"  alt="avatar" style="border-radius: 50%; font-size: 10%;">
+                          </button>
+                         
+                          
+                            <ul class="dropdown-menu"><link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+                              <li class="dropdown-item"><a href="#" style="color: black;">{{companies.name}}</a></li>
+                              <li class="dropdown-item"><a href="#" style="color: black;">{{companies.email}}</a></li>
+                              <li class="dropdown-item"><a href="{% url 'dashboard' %}" style="color: black;">DashBoard</a></li>
+                              <li class="dropdown-item"><a href="#" style="color: black;">HelpCenter</a></li>
+                              <li class="dropdown-item"><a href="{% url 'profile' %}" style="color: black;">View and Edit Profile</a></li>
+                              <li class="dropdown-item"><a href="{% url 'changepass' %}" style="color: black;">Change Password</a></li>
+                              <li class="dropdown-item"><a href="#" style="color: black;">Logout</a></li>
+                              
+                            </ul>
+                          </li>
+                          </ul>
+                         </div>
+                      </li>
+                    </ul>
+        </div>
+      </div>
+    </navbar>
+<div class="header">
+  <a href="#default" class="logo">CompanyLogo</a>
+  <div class="header-right">
+    <button class="tablinks active" onclick="openCity(event, 'about')" id="abt">About</button>
+    <button class="tablinks" onclick="openCity(event, 'contact')" id="cont">Contact</button>
+    <button class="tablinks" onclick="openCity(event, 'smedia')" id="smed">Social Media</button>
+    <button class="tablinks" onclick="openCity(event, 'pns')" id="pro">Products/services</button>
+    <button class="tablinks" onclick="openCity(event, 'story')" id="stry">Story</button>
+    <button class="tablinks" onclick="openCity(event, 'gallery')" id="glry">Gallery</button>
+  </div>
+</div>
+<br>
+<hr style="border: 1px solid black; width: 80%;margin-left: 10%;">
+<br>
+    <div class="container">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="page-wrapper bg-gra-03 p-t-45 p-b-50" id="about">
+           <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading" style="background-color: #33b288; text-shadow: 1px 2px black">
+                    <h2 class="title">Registration Form</h2>
+                </div>
+                <div class="card-body">
+                    
+                        <div class="form-row">
+                            <div class="name" >Name of the Brand</div>
+                            <div class="value">
+                                <div class="input-group" for="fname" >
+                                  {{form.Brand}}  
+                                  <!--<input class="input--style-5" type="text" name="text" placeholder="Paste the link">-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Industry</div>
+                            <div class="value">
+                                <div class="input-group">
+                                  {{form.Industry}}  
+                                  <!--<input class="input--style-5" type="select" name="text" placeholder="paste the link">-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Type of<br> Company</div>
+                            <div class="value">
+                                <div class="input-group">
+                                  
+                                  {{form.company_type}} 
+                                  <!-- <input class="input--style-5" type="text" name="text" placeholder="paste the link">-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Locations</div>
+                              <div class="value">
+                              
+                                <div class="dropdown ">
+                                  {{form.Locations}} 
+                                  <!--<input class="drop" type="text" id="txtdisplay" style ="font-family: inherit;width: 297px;" readonly name="Locations" >-->
+                                  <button class="btn btn-secondary dropdown-toggle btn-sm" style ="width:1px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                  
+                                  <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton" style="margin-right:40%;width: 400px;color: #e5e5e5;background: #555;">
+                                    <input type="checkbox" value="Agra" class="chkvalues">Agra<br/>
+                                    <input type="checkbox" value="Thiruvanthpuram" class="chkvalues">Thiruvanthpuram<br/>
+                                    <input type="checkbox" value="Mathura" class="chkvalues">Mathura<br/>
+                                    <input type="checkbox" value="Ranchi" class="chkvalues">Ranchi<br/>
+                                    <input type="checkbox" value="Lucknow" class="chkvalues">Lucknow<br/>
+                                    <input type="checkbox" value="Delhi" class="chkvalues">Delhi<br/>
+                                    <input type="checkbox" value="Chennai" class="chkvalues">Chennai<br/>
+                                    <input type="checkbox" value="Kerala" class="chkvalues">Kerala<br/>
+                                    <input type="checkbox" value="Goa" class="chkvalues">Goa<br/>
+                                  </div>
+                                  
+                                </div>
+                              </div>
+                                 
+                                <!--   
+                                  <input class="input--style-5" type="text" name="text" placeholder="paste the link">-->
+                                
+                            
+                        </div>
+       <div class="buttons">                 
+          <!--<button class="btn btn--radius-2 btn--red" type="submit">Save Changes</button>-->
+          <button class="btn btn--radius-2 btn--red" type="submit" onclick="next(event,'contact','cont')">Next</button>
+      </div>
+                        </div>
+                    
+                </div>
+            </div> 
+        </div>
+
+
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50" id="contact" style="display: none">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading" style="background-color: #33b288; text-shadow: 1px 2px black">
+                    <h2 class="title">Registration Form</h2>
+                </div>
+                <div class="card-body">
+                    
+                        <div class="form-row">
+                            <div class="name">Phone Number</div>
+                            <div class="value">
+                                <div class="input-group">
+                                   <!-- <input class="input--style-5" type="number" name="company">-->
+                                   {{form.phone}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name"> Email Address</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <!--<input class="input--style-5" type="email" name="email">-->
+                                  {{form.email}}
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Website Link</div>
+                            <div class="value">
+                                <div class="input-group">
+                                  {{form.website}}  
+                                  <!--<input class="input--style-5" type="text" name="name">-->
+                                </div>
+                            </div>
+			                   </div>
+
+                        <div class="buttons">
+<button class="btn btn--radius-2 btn--red" type="submit" onclick="next(event,'about','abt')">Previous</button>
+<button  class="btn btn--radius-2 btn--red" type="submit" onclick="next(event,'smedia','smed')">Next</button>
+                        </div>
+                      </div>
+                    
+                </div>
+            </div>
+        </div>
+
+            <div class="page-wrapper bg-gra-03 p-t-45 p-b-50" id="smedia" style="display: none;">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading" style="background-color: #33b288; text-shadow: 1px 2px black">
+                    <h2 class="title">Registration Form</h2>
+                </div>
+                <div class="card-body">
+                    
+                        <div class="form-row">
+                            <div class="name">Facebook Profile</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="text" placeholder="Paste the link">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Instagram Profile</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="text" placeholder="paste the link">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Twitter Profile</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="text" placeholder="paste the link">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Youtube Link</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="text" placeholder="paste the link">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Linkedin profile</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="text" placeholder="paste the link">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+<button class="btn btn--radius-2 btn--red" type="submit" onclick="next(event,'contact','cont')">Previous</button>
+<button class="btn btn--radius-2 btn--red" type="submit" onclick="next(event,'pns','pro')">Next</button>
+                        </div>
+                      </div>
+                    
+                </div>
+            </div>
+        </div>
+      <div class="page-wrapper bg-gra-03 p-t-45 p-b-50" id="pns" style="display: none;">
+         <div class="row">
+            <div class="col-sm-12 product-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="active formtabs"><a href="#" data-toggle="tab">Product</a></li>
+                    <li class="formtabs"><a href="#" data-toggle="tab">Services</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading" style="background-color: #33b288; text-shadow: 1px 2px black">
+                    <h2 class="title">Registration Form</h2>
+                </div>
+                <div class="card-body">
+
+
+          <div class="form-row" >
+            <div class="custom-file">
+             <!-- <input type="file" class="custom-file-input" id="inputGroupFile">-->
+             {{form.ph1}}
+              <label class="custom-file-label" for="inputGroupFile04"><b>Insert Your Image</b></label>
+              
+            </div>
+          </div>
+                    
+
+                        <div class="form-row">
+                            <div class="name">Name</div>
+                            <div class="value">
+                                <div class="input-group">
+                                  {{form.pro1}}
+                                    <!--<input class="input--style-5" type="text" name="text">-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Link to buy</div>
+                            <div class="value">
+                                <div class="input-group">
+                                  {{form.link1}}
+                                    <!--<input class="input--style-5" type="text" name="name">-->
+                                </div>
+                            </div>
+      </div>
+
+<div class="buttons">
+<button class="btn btn--radius-2 btn--red" type="submit" onclick="next(event,'smedia','smed')">Previous</button>
+<button class="btn btn--radius-2 btn--red" type="submit" onclick="next(event,'story','stry')">Next</button>
+                   </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+
+         <div class="page-wrapper bg-gra-03 p-t-45 p-b-50" id="story" style="display: none;">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading" style="background-color: #33b288; text-shadow: 1px 2px black">
+                    <h2 class="title">Registration Form</h2>
+                </div>
+                <div class="card-body">
+                    
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Your Story</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea><br>
+            </div>
+
+
+<button class="btn btn--radius-2 btn--red" type="submit" onclick="next(event,'pns','pro')">Previous</button>
+<button class="btn btn--radius-2 btn--red" type="submit" onclick="next(event,'gallery','glry')">Next</button>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+
+         <div class="page-wrapper bg-gra-03 p-t-45 p-b-50" id="gallery" style="display: none">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading" style="background-color: #33b288; text-shadow: 1px 2px black">
+                    <h2 class="title">Registration Form</h2>
+                </div>
+                <div class="card-body">
+
+          <div class="form-row">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile">
+              <label class="custom-file-label" for="inputGroupFile04"><b>Insert Your Image</b></label>
+            </div>
+          </div>
+                
+
+
+          <div class="form-row">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile">
+              <label class="custom-file-label" for="inputGroupFile04"><b>Insert Your Image</b></label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile">
+              <label class="custom-file-label" for="inputGroupFile04"><b>Insert Your Image</b></label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile">
+              <label class="custom-file-label" for="inputGroupFile04"><b>Insert Your Image</b></label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile">
+              <label class="custom-file-label" for="inputGroupFile04"><b>Insert Your Image</b></label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile">
+              <label class="custom-file-label" for="inputGroupFile04"><b>Insert Your Image</b></label>
+            </div>
+          </div>
+          <div class="buttons">
+<button class="btn btn--radius-2 btn--red" type="submit" onclick="next(event,'story','stry')">Previous</button>
+<button class="btn btn--radius-2 btn--red" type="submit">Submit</button>
+                        </div>
+                      </div>
+                    
+                </div>
+            </div>
+        </div>
+      </form>
+
+    </div>
+
+<link type="text/css" rel="stylesheet" href="{% static 'css/style_footer.css' %}" />
+
+         <div class="footer">
+      <div class="row">
+        <div class="col-sm-2">
+            <div style="background-color:white">Logo</div>
+            <br>
+            <p><a href="{% url 'about' %}">About Us</a></p><br>
+            <p><a href="#">Partners</a></p><br>
+            <p><a href="#">Clientele</a></p><br>
+            <p><a href="#">Testimonials</a></p><br>
+        </div>
+        <div class="col-sm-2">
+            <p >Browse Opportunities</p>
+            <br>
+            <p><a href="#">Competitions </a>|
+               <a href="#"> Quizzes</a></p><br>
+            <p><a href="#">Hackathons </a>|
+               <a href="#"> Jobs and Internships</a></p><br>
+            <p><a href="#">Scholarships </a>|
+               <a href="#"> Workshops</a></p><br>
+            <p><a href="#">Cultural Events</a><br>
+        </div>
+        <div class="col-sm-2">
+            <p>Categories<p><br>
+            <p><a href="#">Industries </a></p><br>
+            <p><a href="#">Industries-1</a></p><br>
+            <p><a href="#">Industries-2</a></p><br>
+            <p><a href="#">Industries-3</a></p><br>
+            <p><a href="#">Industries-4</a></p><br>
+            <p><a href="#">Industries-5</a></p><br>
+            <p><a href="#">Industries-6</a></p><br>
+        </div>
+        <div class="col-sm-2">
+            <p >Locations</p><br>
+            <p><a href="#">Delhi </a></p><br>
+            <p><a href="#">Mumbai</a></p><br>
+            <p><a href="#">Kolkata</a></p><br>
+            <p><a href="#">Pune</a></p><br>
+            <p><a href="#">Bengaluru</a></p><br>
+            <p><a href="#">Chennai</a></p><br>
+            <p><a href="#">Ahemdabad</a></p>
+        </div>
+        <div class="col-sm-4">
+            <p >Connect with us</p><br>
+            <p><a href="#"><i style='font-size:24px;color:white'></i>&nbspInstagram </a></p><br>
+            <p><a href="#"><i style='font-size:24px;color:white'></i>&nbspFacebook </a></p><br>
+            <p><a href="#"><i style='font-size:24px;color:white'></i>&nbspWhatsapp </a></p><br>
+            <p><a href="#"><i style='font-size:24px;color:white'></i>&nbspLinkedIn</a></p><br>
+        </div>
+      </div>
+<hr style="border-top: 1px solid white;"><br>
+       <div class="conditions">
+           <p><a href="{% url 'terms' %}">Terms & Conditions </a>|
+              <a href="#"> Privacy Policy </a>|
+              <a href="#"> Branding Guidelines </a>|
+              <a href="#"> Partner With Us </a>|
+              <a href="#"> Contact Us </a>|
+              <a href="#"> FAQs </a>|
+              <a href="#"> Subscribe Newsletter</a>
+              <a type="button" href="#" class="btn btn-primary" style="color:white">Publish Opportunity</a><br><br>
+           </p>
+        </div> 
+<hr style="border-top: 1px solid white;"><br><br>
+</div> 
+  <script type="text/javascript">
+   function highlightCurrent() {
+         const curPage = document.URL;
+         const links = document.getElementsByClassName("nav-link");
+         for (let link of links) {
+           if (link.href == curPage) {
+             link.classList.add("current");
+           }
+         }
+       }
+       document.onreadystatechange = () => {
+         if (document.readyState === 'complete') {
+           highlightCurrent()
+         }
+       };
+
+       function openCity(evt, cityName) {
+     // $(window).scrollTop(0);
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("page-wrapper");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    // tablinks[i].style.backgroundColor="white";
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+   function next(evt, cityName, id) {
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("page-wrapper");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  document.getElementById(id).className += " active";
+  console.log("a");
+  }
+
+    </script></div>
+
+        <script src="{% static 'js/js_partner.js'%}"></script>
+        <script src="{% static 'js/js_navbar.js'%}"></script>
+
+</html>
+
